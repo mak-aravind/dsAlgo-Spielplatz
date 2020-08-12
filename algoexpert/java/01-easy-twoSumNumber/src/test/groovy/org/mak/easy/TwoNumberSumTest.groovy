@@ -34,4 +34,15 @@ class TwoNumberSumTest extends Specification {
         then:
             null != result && result[0] == 11 && result[1] == -1
     }
+
+    def "get a proper result for input with matching items"() {
+        setup:
+        def app = new TwoNumberSum()
+        def inputArray = [3, 5, -4, 8, 10, 1, -1, 6] as Integer[]
+        def targetSum = 10
+        when:
+        def result = app.findCouplets(inputArray,targetSum)
+        then:
+        null != result && 0 == result.length
+    }
 }
